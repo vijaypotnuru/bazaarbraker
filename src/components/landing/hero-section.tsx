@@ -45,7 +45,7 @@ const products: Product[] = [
     iconColor: "text-blue-600",
     badge: "Upto 15% Discount",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/term-insurance",
   },
   {
     label: "Health Insurance",
@@ -54,7 +54,7 @@ const products: Product[] = [
     iconColor: "text-red-500",
     badge: "Lowest Price Guarantee",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/health-insurance",
   },
   {
     label: "Investment Plans",
@@ -63,7 +63,7 @@ const products: Product[] = [
     iconColor: "text-amber-600",
     badge: "In-Built Life Cover",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/investment-plans",
   },
   {
     label: "Car Insurance",
@@ -72,7 +72,7 @@ const products: Product[] = [
     iconColor: "text-sky-600",
     badge: "Lowest Price Guarantee",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/car-insurance",
   },
   {
     label: "2 Wheeler Insurance",
@@ -81,7 +81,7 @@ const products: Product[] = [
     iconColor: "text-orange-600",
     badge: "Upto 85% Discount",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/two-wheeler-insurance",
   },
   {
     label: "Family Health Insurance",
@@ -90,14 +90,14 @@ const products: Product[] = [
     iconColor: "text-teal-600",
     badge: "Upto 25% Discount",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/health-insurance/family",
   },
   {
     label: "Travel Insurance",
     icon: Plane,
     iconBg: "bg-indigo-100",
     iconColor: "text-indigo-600",
-    href: "#compare",
+    href: "/travel-insurance",
   },
   {
     label: "Term Insurance (Women)",
@@ -106,14 +106,14 @@ const products: Product[] = [
     iconColor: "text-pink-600",
     badge: "Upto 25% Cheaper",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/term-insurance",
   },
   {
     label: "Term Plans with Return of Premium",
     icon: HandCoins,
     iconBg: "bg-emerald-100",
     iconColor: "text-emerald-600",
-    href: "#compare",
+    href: "/term-insurance",
   },
   {
     label: "Guaranteed Return Plans",
@@ -122,7 +122,7 @@ const products: Product[] = [
     iconColor: "text-yellow-700",
     badge: "Upto 7.4% Returns",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/investment-plans",
   },
   {
     label: "Child Savings Plans",
@@ -131,14 +131,14 @@ const products: Product[] = [
     iconColor: "text-purple-600",
     badge: "Premium Waiver",
     badgeVariant: "pink",
-    href: "#compare",
+    href: "/investment-plans/child-plans",
   },
   {
     label: "Retirement Plans",
     icon: Armchair,
     iconBg: "bg-stone-100",
     iconColor: "text-stone-600",
-    href: "#compare",
+    href: "/investment-plans/pension-plans",
   },
   {
     label: "Employee Group Health Insurance",
@@ -147,7 +147,7 @@ const products: Product[] = [
     iconColor: "text-cyan-700",
     badge: "Upto 65% Discount",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/health-insurance",
   },
   {
     label: "Home Insurance",
@@ -156,7 +156,7 @@ const products: Product[] = [
     iconColor: "text-lime-700",
     badge: "Upto 25% Discount",
     badgeVariant: "green",
-    href: "#compare",
+    href: "/home-insurance",
   },
 ];
 

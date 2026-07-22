@@ -3,7 +3,7 @@ import { Headphones } from "lucide-react";
 
 export function HelpSection() {
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section id="help" className="bg-white py-12 md:py-16">
       <div className="bb-container">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <div className="flex justify-center lg:order-first">

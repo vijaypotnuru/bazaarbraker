@@ -41,12 +41,12 @@ export const insuranceColumns: InsuranceColumn[] = [
     icon: Umbrella,
     iconColor: "text-[#7c5ce7]",
     links: [
-      { label: "Life Insurance", href: "#compare" },
-      { label: "Best Term Insurance Plan", href: "#compare" },
-      { label: "Term Insurance for NRI", href: "#compare" },
-      { label: "What is Term Insurance", href: "#compare" },
-      { label: "1 Crore Term Insurance", href: "#compare" },
-      { label: "Term Insurance Calculator", href: "#compare" },
+      { label: "Life Insurance", href: "/life-insurance" },
+      { label: "Best Term Insurance Plan", href: "/term-insurance" },
+      { label: "Term Insurance for NRI", href: "/term-insurance/nri" },
+      { label: "What is Term Insurance", href: "/term-insurance/what-is-term-insurance" },
+      { label: "1 Crore Term Insurance", href: "/term-insurance/1-crore-term-insurance" },
+      { label: "Term Insurance Calculator", href: "/term-insurance/calculator" },
     ],
   },
   {
@@ -54,12 +54,12 @@ export const insuranceColumns: InsuranceColumn[] = [
     icon: Coins,
     iconColor: "text-[#e8870a]",
     links: [
-      { label: "ULIP Plans", href: "#compare" },
-      { label: "Best SIP Plans", href: "#compare" },
-      { label: "Child Plans", href: "#compare" },
-      { label: "Pension Plans", href: "#compare" },
-      { label: "SIP Calculator", href: "#compare" },
-      { label: "LIC", href: "#compare" },
+      { label: "ULIP Plans", href: "/investment-plans/ulip" },
+      { label: "Best SIP Plans", href: "/investment-plans/sip" },
+      { label: "Child Plans", href: "/investment-plans/child-plans" },
+      { label: "Pension Plans", href: "/investment-plans/pension-plans" },
+      { label: "SIP Calculator", href: "/calculators/sip" },
+      { label: "LIC", href: "/lic" },
     ],
   },
   {
@@ -67,12 +67,12 @@ export const insuranceColumns: InsuranceColumn[] = [
     icon: HeartPulse,
     iconColor: "text-[#e05a8a]",
     links: [
-      { label: "Health Insurance Plans for Family", href: "#compare" },
-      { label: "Senior Citizen Health Insurance", href: "#compare" },
-      { label: "Health Insurance for Parents", href: "#compare" },
-      { label: "Maternity Insurance", href: "#compare" },
-      { label: "Critical Illness Insurance", href: "#compare" },
-      { label: "Health Insurance Calculator", href: "#compare" },
+      { label: "Health Insurance Plans for Family", href: "/health-insurance/family" },
+      { label: "Senior Citizen Health Insurance", href: "/health-insurance/senior-citizen" },
+      { label: "Health Insurance for Parents", href: "/health-insurance/parents" },
+      { label: "Maternity Insurance", href: "/health-insurance/maternity" },
+      { label: "Critical Illness Insurance", href: "/health-insurance/critical-illness" },
+      { label: "Health Insurance Calculator", href: "/health-insurance/calculator" },
     ],
   },
   {
@@ -80,61 +80,61 @@ export const insuranceColumns: InsuranceColumn[] = [
     icon: Car,
     iconColor: "text-[#4a7fd4]",
     links: [
-      { label: "Motor Insurance", href: "#compare" },
-      { label: "Bike Insurance", href: "#compare" },
-      { label: "Third Party Insurance", href: "#compare" },
-      { label: "Car Insurance Calculator", href: "#compare" },
-      { label: "Bike Insurance Calculator", href: "#compare" },
-      { label: "Commercial Vehicle Insurance", href: "#compare" },
+      { label: "Motor Insurance", href: "/motor-insurance" },
+      { label: "Bike Insurance", href: "/two-wheeler-insurance" },
+      { label: "Third Party Insurance", href: "/car-insurance/third-party" },
+      { label: "Car Insurance Calculator", href: "/car-insurance/calculator" },
+      { label: "Bike Insurance Calculator", href: "/two-wheeler-insurance/calculator" },
+      { label: "Commercial Vehicle Insurance", href: "/commercial-vehicle-insurance" },
     ],
   },
 ];
 
 export const otherInsuranceLinks: NavLink[] = [
-  { label: "Travel Insurance", href: "#compare" },
-  { label: "International Travel Insurance", href: "#compare" },
-  { label: "Marine Insurance", href: "#compare" },
+  { label: "Travel Insurance", href: "/travel-insurance" },
+  { label: "International Travel Insurance", href: "/travel-insurance/international" },
+  { label: "Marine Insurance", href: "/marine-insurance" },
 ];
 
 export const renewItems: RenewItem[] = [
   {
     label: "Term Life Renewal",
-    href: "#compare",
+    href: "/term-insurance",
     icon: Umbrella,
     iconBg: "bg-purple-100",
     iconColor: "text-purple-600",
   },
   {
     label: "Investment Renewal",
-    href: "#compare",
+    href: "/investment-plans",
     icon: Coins,
     iconBg: "bg-orange-100",
     iconColor: "text-orange-600",
   },
   {
     label: "Health Renewal",
-    href: "#compare",
+    href: "/health-insurance",
     icon: HeartPulse,
     iconBg: "bg-red-100",
     iconColor: "text-red-500",
   },
   {
     label: "Motor Renewal",
-    href: "#compare",
+    href: "/car-insurance",
     icon: Car,
     iconBg: "bg-blue-100",
     iconColor: "text-blue-600",
   },
   {
     label: "Two Wheeler Renewal",
-    href: "#compare",
+    href: "/two-wheeler-insurance",
     icon: Bike,
     iconBg: "bg-sky-100",
     iconColor: "text-sky-600",
   },
   {
     label: "Home Insurance Renewal",
-    href: "#compare",
+    href: "/home-insurance",
     icon: Home,
     iconBg: "bg-amber-100",
     iconColor: "text-amber-700",
@@ -142,27 +142,27 @@ export const renewItems: RenewItem[] = [
 ];
 
 export const claimLinks: NavLink[] = [
-  { label: "File a new claim", href: "#compare" },
-  { label: "Claim is already filed with the Insurer", href: "#compare" },
-  { label: "Know more about filing claim", href: "#compare" },
-  { label: "Track existing claim", href: "#compare" },
-  { label: "Cashless network", href: "#compare" },
+  { label: "File a new claim", href: "/health-insurance" },
+  { label: "Claim is already filed with the Insurer", href: "/health-insurance" },
+  { label: "Know more about filing claim", href: "/health-insurance" },
+  { label: "Track existing claim", href: "/health-insurance" },
+  { label: "Cashless network", href: "/health-insurance" },
 ];
 
 export const supportPrimary: SupportItem[] = [
-  { label: "Track payments / policy status", href: "#compare", variant: "primary" },
-  { label: "View / manage policies", href: "#compare", variant: "primary" },
-  { label: "Claims", href: "#compare", variant: "primary" },
-  { label: "Communication preferences", href: "#compare", variant: "primary" },
-  { label: "Get help/Report an issue", href: "#compare", variant: "primary" },
+  { label: "Track payments / policy status", href: "/#help", variant: "primary" },
+  { label: "View / manage policies", href: "/#help", variant: "primary" },
+  { label: "Claims", href: "/health-insurance", variant: "primary" },
+  { label: "Communication preferences", href: "/#help", variant: "primary" },
+  { label: "Get help/Report an issue", href: "/#help", variant: "primary" },
 ];
 
 export const supportSecondary: SupportItem[] = [
-  { label: "Verify advisor", href: "#compare", variant: "secondary" },
-  { label: "Advisor Feedback", href: "#compare", variant: "secondary" },
-  { label: "Get a call back", href: "#compare", variant: "secondary" },
-  { label: "Chat With Us", href: "#compare", variant: "secondary" },
-  { label: "View more", href: "#compare", variant: "secondary" },
+  { label: "Verify advisor", href: "/#help", variant: "secondary" },
+  { label: "Advisor Feedback", href: "/#help", variant: "secondary" },
+  { label: "Get a call back", href: "/#help", variant: "secondary" },
+  { label: "Chat With Us", href: "/#help", variant: "secondary" },
+  { label: "View more", href: "/#help", variant: "secondary" },
 ];
 
 export const navItems: { id: Exclude<NavMenuId, null>; label: string }[] = [
