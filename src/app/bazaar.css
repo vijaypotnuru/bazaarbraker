@@ -1,0 +1,218 @@
+/* BazaarBraker — Coinbase-inspired design tokens (DESIGN-coinbase.md) */
+
+:root {
+  --bb-primary: #0052ff;
+  --bb-primary-active: #003ecc;
+  --bb-primary-disabled: #a8b8cc;
+  --bb-ink: #0a0b0d;
+  --bb-body: #5b616e;
+  --bb-muted: #7c828a;
+  --bb-muted-soft: #a8acb3;
+  --bb-hairline: #dee1e6;
+  --bb-hairline-soft: #eef0f3;
+  --bb-canvas: #ffffff;
+  --bb-surface-soft: #f7f7f7;
+  --bb-surface-strong: #eef0f3;
+  --bb-surface-dark: #0a0b0d;
+  --bb-surface-dark-elevated: #16181c;
+  --bb-on-primary: #ffffff;
+  --bb-on-dark: #ffffff;
+  --bb-on-dark-soft: #a8acb3;
+  --bb-semantic-up: #05b169;
+  --bb-semantic-down: #cf202f;
+  --bb-accent-yellow: #f4b000;
+  --bb-section: 96px;
+  --bb-radius-xl: 24px;
+  --bb-radius-pill: 100px;
+}
+
+.bb-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  .bb-container {
+    padding-inline: 48px;
+  }
+}
+
+.bb-display-mega {
+  font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--bb-ink);
+}
+
+.bb-display-lg {
+  font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.013em;
+}
+
+.bb-title-lg {
+  font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.13;
+  letter-spacing: -0.004em;
+}
+
+.bb-title-md {
+  font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.bb-body-md {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bb-body);
+}
+
+.bb-body-sm {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bb-body);
+}
+
+.bb-caption-strong {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bb-number {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.bb-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 12px 20px;
+  border-radius: var(--bb-radius-pill);
+  background: var(--bb-primary);
+  color: var(--bb-on-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.15;
+  transition: background 0.15s ease;
+}
+
+.bb-btn-primary:hover {
+  background: var(--bb-primary-active);
+}
+
+.bb-btn-primary-lg {
+  height: 56px;
+  padding: 16px 32px;
+}
+
+.bb-btn-secondary-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 12px 20px;
+  border-radius: var(--bb-radius-pill);
+  background: var(--bb-surface-strong);
+  color: var(--bb-ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.15;
+  transition: background 0.15s ease;
+}
+
+.bb-btn-secondary-light:hover {
+  background: var(--bb-hairline);
+}
+
+.bb-btn-secondary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 12px 20px;
+  border-radius: var(--bb-radius-pill);
+  background: var(--bb-surface-dark-elevated);
+  color: var(--bb-on-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.bb-btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 11px 19px;
+  border-radius: var(--bb-radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--bb-on-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.bb-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--bb-radius-pill);
+  background: var(--bb-surface-strong);
+  color: var(--bb-ink);
+}
+
+.bb-card-light {
+  background: var(--bb-canvas);
+  border: 1px solid var(--bb-hairline);
+  border-radius: var(--bb-radius-xl);
+  padding: 32px;
+}
+
+.bb-card-dark {
+  background: var(--bb-surface-dark-elevated);
+  border-radius: var(--bb-radius-xl);
+  padding: 32px;
+  color: var(--bb-on-dark);
+}
+
+.bb-search-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  padding: 12px 20px;
+  border-radius: var(--bb-radius-pill);
+  background: var(--bb-surface-strong);
+  color: var(--bb-muted);
+  font-size: 1rem;
+}
+
+.bb-section {
+  padding-block: var(--bb-section);
+}
+
+@media (max-width: 768px) {
+  .bb-section {
+    padding-block: 64px;
+  }
+}
