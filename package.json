@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "download:partner-logos": "node scripts/download-partner-logos.mjs",
+    "fetch:pb-sitemap": "node scripts/fetch-policybazaar-sitemap-pages.mjs",
+    "fetch:pb-sitemap:sitemaps": "node scripts/fetch-policybazaar-sitemap-pages.mjs --sitemaps-only",
+    "fetch:pb-sitemap:pages": "node scripts/fetch-policybazaar-sitemap-pages.mjs --pages-only"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

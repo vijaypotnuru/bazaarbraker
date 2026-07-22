@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scraped policybazaar data
+/data/policybazaar-sitemap/
+/tmp-pb-*
