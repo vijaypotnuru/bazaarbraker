@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import {
   Armchair,
   Baby,
   Bike,
   Car,
-  ChevronRight,
   Coins,
   HandCoins,
   HeartPulse,
@@ -27,6 +27,15 @@ import { HeroBannerCarousel } from "@/components/landing/hero-banner-carousel";
 
 type BadgeVariant = "green" | "pink" | "none";
 
+type ServiceId =
+  | "all"
+  | "term"
+  | "health"
+  | "motor"
+  | "investment"
+  | "travel"
+  | "home";
+
 type Product = {
   label: string;
   icon: LucideIcon;
@@ -35,7 +44,18 @@ type Product = {
   badge?: string;
   badgeVariant?: BadgeVariant;
   href: string;
+  service: Exclude<ServiceId, "all">;
 };
+
+const serviceTabs: { id: ServiceId; label: string }[] = [
+  { id: "all", label: "All Services" },
+  { id: "term", label: "Term Life" },
+  { id: "health", label: "Health" },
+  { id: "motor", label: "Motor" },
+  { id: "investment", label: "Investment" },
+  { id: "travel", label: "Travel" },
+  { id: "home", label: "Home" },
+];
 
 const products: Product[] = [
   {
@@ -46,6 +66,7 @@ const products: Product[] = [
     badge: "Upto 15% Discount",
     badgeVariant: "green",
     href: "/term-insurance",
+    service: "term",
   },
   {
     label: "Health Insurance",
@@ -55,6 +76,7 @@ const products: Product[] = [
     badge: "Lowest Price Guarantee",
     badgeVariant: "green",
     href: "/health-insurance",
+    service: "health",
   },
   {
     label: "Investment Plans",
@@ -64,6 +86,7 @@ const products: Product[] = [
     badge: "In-Built Life Cover",
     badgeVariant: "green",
     href: "/investment-plans",
+    service: "investment",
   },
   {
     label: "Car Insurance",
@@ -73,6 +96,7 @@ const products: Product[] = [
     badge: "Lowest Price Guarantee",
     badgeVariant: "green",
     href: "/car-insurance",
+    service: "motor",
   },
   {
     label: "2 Wheeler Insurance",
@@ -82,6 +106,7 @@ const products: Product[] = [
     badge: "Upto 85% Discount",
     badgeVariant: "green",
     href: "/two-wheeler-insurance",
+    service: "motor",
   },
   {
     label: "Family Health Insurance",
@@ -91,6 +116,7 @@ const products: Product[] = [
     badge: "Upto 25% Discount",
     badgeVariant: "green",
     href: "/health-insurance/family",
+    service: "health",
   },
   {
     label: "Travel Insurance",
@@ -98,6 +124,7 @@ const products: Product[] = [
     iconBg: "bg-indigo-100",
     iconColor: "text-indigo-600",
     href: "/travel-insurance",
+    service: "travel",
   },
   {
     label: "Term Insurance (Women)",
@@ -107,6 +134,7 @@ const products: Product[] = [
     badge: "Upto 25% Cheaper",
     badgeVariant: "green",
     href: "/term-insurance",
+    service: "term",
   },
   {
     label: "Term Plans with Return of Premium",
@@ -114,6 +142,7 @@ const products: Product[] = [
     iconBg: "bg-emerald-100",
     iconColor: "text-emerald-600",
     href: "/term-insurance",
+    service: "term",
   },
   {
     label: "Guaranteed Return Plans",
@@ -123,6 +152,7 @@ const products: Product[] = [
     badge: "Upto 7.4% Returns",
     badgeVariant: "green",
     href: "/investment-plans",
+    service: "investment",
   },
   {
     label: "Child Savings Plans",
@@ -132,6 +162,7 @@ const products: Product[] = [
     badge: "Premium Waiver",
     badgeVariant: "pink",
     href: "/investment-plans/child-plans",
+    service: "investment",
   },
   {
     label: "Retirement Plans",
@@ -139,6 +170,7 @@ const products: Product[] = [
     iconBg: "bg-stone-100",
     iconColor: "text-stone-600",
     href: "/investment-plans/pension-plans",
+    service: "investment",
   },
   {
     label: "Employee Group Health Insurance",
@@ -148,6 +180,7 @@ const products: Product[] = [
     badge: "Upto 65% Discount",
     badgeVariant: "green",
     href: "/health-insurance",
+    service: "health",
   },
   {
     label: "Home Insurance",
@@ -157,6 +190,7 @@ const products: Product[] = [
     badge: "Upto 25% Discount",
     badgeVariant: "green",
     href: "/home-insurance",
+    service: "home",
   },
 ];
 
@@ -238,6 +272,43 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
+function ServiceToggle({
+  active,
+  onChange,
+}: {
+  active: ServiceId;
+  onChange: (id: ServiceId) => void;
+}) {
+  return (
+    <div
+      role="tablist"
+      aria-label="Filter products by service"
+      className="mb-6 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    >
+      {serviceTabs.map((tab) => {
+        const isActive = active === tab.id;
+        return (
+          <button
+            key={tab.id}
+            type="button"
+            role="tab"
+            aria-selected={isActive}
+            onClick={() => onChange(tab.id)}
+            className={cn(
+              "shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
+              isActive
+                ? "border-[#0052ff] bg-[#0052ff] text-white"
+                : "border-[#e8edf5] bg-[#f8faff] text-[#4a5568] hover:border-[#c5d5ea] hover:text-[#1a3a6b]"
+            )}
+          >
+            {tab.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 function AlsoBuySection() {
   return (
     <div className="mt-10 border-t border-[#e8edf5] pt-8">
@@ -248,7 +319,7 @@ function AlsoBuySection() {
         {alsoBuyItems.map((item) => (
           <Link
             key={item.label}
-            href="#compare"
+            href="#also-buy"
             className="rounded-xl border border-[#e8edf5] bg-white px-4 py-3 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all hover:border-[#c5d5ea] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
           >
             <p
@@ -272,6 +343,13 @@ function AlsoBuySection() {
 }
 
 export function HeroSection() {
+  const [activeService, setActiveService] = useState<ServiceId>("all");
+
+  const filteredProducts =
+    activeService === "all"
+      ? products
+      : products.filter((product) => product.service === activeService);
+
   return (
     <section className="bg-white">
       <div className="bb-container py-8 md:py-10">
@@ -305,20 +383,33 @@ export function HeroSection() {
           <HeroBannerCarousel />
         </div>
 
+        <ServiceToggle active={activeService} onChange={setActiveService} />
+
         {/* Product grid */}
-        <div id="products" className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
-          {products.map((product) => (
+        <div
+          id="products"
+          role="tabpanel"
+          className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7"
+        >
+          {filteredProducts.map((product) => (
             <ProductCard key={product.label} product={product} />
           ))}
         </div>
 
+        {filteredProducts.length === 0 && (
+          <p className="mt-6 text-center text-sm text-[#6a8099]">
+            No products in this service yet. Try another tab.
+          </p>
+        )}
+
         <div className="mt-8 flex justify-center">
-          <Link
-            href="#also-buy"
+          <button
+            type="button"
+            onClick={() => setActiveService("all")}
             className="inline-flex h-11 items-center justify-center rounded-full border-2 border-[#0052ff] bg-white px-8 text-sm font-semibold text-[#0052ff] transition-colors hover:bg-[#0052ff]/5"
           >
-            View all products
-          </Link>
+            {activeService === "all" ? "View all products" : "Show all services"}
+          </button>
         </div>
 
         <div id="also-buy">
