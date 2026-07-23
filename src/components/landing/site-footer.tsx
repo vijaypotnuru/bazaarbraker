@@ -1,82 +1,115 @@
 import Link from "next/link";
+import { Mail, Phone } from "lucide-react";
 
-const columns = [
-  {
-    title: "Cover",
-    links: [
-      { label: "Term Life", href: "/term-insurance" },
-      { label: "Health", href: "/health-insurance" },
-      { label: "Motor", href: "/car-insurance" },
-      { label: "Investment", href: "/investment-plans" },
-      { label: "Travel", href: "/travel-insurance" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "#help" },
-      { label: "Legal", href: "#" },
-    ],
-  },
+const coverLinks = [
+  { label: "Term Life", href: "/term-insurance" },
+  { label: "Health", href: "/health-insurance" },
+  { label: "Motor", href: "/car-insurance" },
+  { label: "Investment", href: "/investment-plans" },
+  { label: "Travel", href: "/travel-insurance" },
+];
+
+const companyLinks = [
+  { label: "About", href: "#" },
+  { label: "Careers", href: "#" },
+  { label: "Contact", href: "#help" },
+  { label: "Legal", href: "#" },
 ];
 
 export function SiteFooter() {
   return (
-    <footer id="help" className="bg-[var(--bb-surface)] pt-16 pb-10">
-      <div className="bb-container">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
-            <p className="text-lg font-semibold tracking-tight text-[var(--bb-ink)]">
-              bazaar<span className="text-[var(--bb-primary)]">braker</span>
-            </p>
-            <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-[var(--bb-body)]">
-              India&apos;s calm insurance marketplace. Compare clearly. Buy with
-              confidence.
-            </p>
-            <div className="mt-6 space-y-1 text-sm">
-              <a
-                href="mailto:support@bazaarbraker.com"
-                className="block font-medium text-[var(--bb-ink)] hover:text-[var(--bb-primary)]"
-              >
-                support@bazaarbraker.com
-              </a>
-              <a
-                href="tel:18002088787"
-                className="block font-mono tabular-nums text-[var(--bb-body)] hover:text-[var(--bb-ink)]"
-              >
-                1800 208 8787
-              </a>
-            </div>
-          </div>
+    <footer
+      id="help"
+      className="relative overflow-hidden bg-[var(--bb-surface-dark)] pt-20 pb-10 text-[var(--bb-on-dark)]"
+    >
+      <div
+        className="pointer-events-none absolute -left-32 top-0 size-[420px] rounded-full bg-[var(--bb-primary)]/15 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -right-24 bottom-0 size-[320px] rounded-full bg-[var(--bb-primary)]/10 blur-3xl"
+        aria-hidden
+      />
 
-          {columns.map((col) => (
-            <div key={col.title}>
-              <h3 className="text-sm font-semibold text-[var(--bb-ink)]">
-                {col.title}
-              </h3>
-              <ul className="mt-4 space-y-2.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-[var(--bb-body)] transition-colors hover:text-[var(--bb-ink)]"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <div className="bb-container relative">
+        {/* Brand wordmark — hero-level signal */}
+        <div className="max-w-3xl">
+          <p className="bb-display text-[clamp(2.5rem,8vw,5.5rem)] text-white">
+            bazaar<span className="text-[var(--bb-primary)]">braker</span>
+          </p>
+          <p className="mt-4 max-w-[42ch] text-base leading-relaxed text-white/60 md:text-lg">
+            India&apos;s calm insurance marketplace. Compare clearly. Buy with
+            confidence.
+          </p>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-[var(--bb-hairline)] pt-6 text-xs text-[var(--bb-muted)] md:flex-row md:items-center md:justify-between">
+        {/* Contact strip */}
+        <div className="mt-12 flex flex-col gap-4 border-y border-white/10 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <a
+            href="mailto:support@bazaarbraker.com"
+            className="group inline-flex items-center gap-3 text-base font-medium text-white transition-colors hover:text-[var(--bb-primary)]"
+          >
+            <span className="flex size-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 transition-colors group-hover:bg-[var(--bb-primary)]/15 group-hover:ring-[var(--bb-primary)]/40">
+              <Mail className="size-4" strokeWidth={1.5} />
+            </span>
+            support@bazaarbraker.com
+          </a>
+          <a
+            href="tel:18002088787"
+            className="group inline-flex items-center gap-3 font-[family-name:var(--font-geist-mono)] text-base tabular-nums text-white/70 transition-colors hover:text-white sm:text-lg"
+          >
+            <span className="flex size-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 transition-colors group-hover:bg-[var(--bb-primary)]/15 group-hover:ring-[var(--bb-primary)]/40">
+              <Phone className="size-4" strokeWidth={1.5} />
+            </span>
+            1800 208 8787
+          </a>
+        </div>
+
+        {/* Link rows — horizontal, not stacked columns */}
+        <div className="mt-10 grid gap-8 sm:grid-cols-2">
+          <nav aria-label="Cover">
+            <p className="font-[family-name:var(--font-outfit)] text-sm font-semibold text-white">
+              Cover
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2.5">
+              {coverLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/55 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Company">
+            <p className="font-[family-name:var(--font-outfit)] text-sm font-semibold text-white">
+              Company
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/55 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Legal bar */}
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs leading-relaxed text-white/40 md:flex-row md:items-start md:justify-between">
           <p>© 2026 BazaarBraker. All rights reserved.</p>
-          <p>
-            IRDAI Web Aggregator · Licence subject to verification · Insurance is
-            the subject matter of solicitation.
+          <p className="max-w-[52ch] md:text-right">
+            IRDAI Web Aggregator · Licence subject to verification · Insurance
+            is the subject matter of solicitation.
           </p>
         </div>
       </div>

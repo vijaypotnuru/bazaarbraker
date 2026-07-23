@@ -1,5 +1,6 @@
 import { AiExpertSection } from "@/components/landing/ai-expert-section";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
+import { GradientPathsSection } from "@/components/landing/gradient-paths-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { IslandNav } from "@/components/landing/island-nav";
 import { PartnersStrip } from "@/components/landing/partners-strip";
@@ -10,7 +11,7 @@ import { TrustProofSection } from "@/components/landing/trust-proof-section";
 
 /**
  * BazaarBraker landing — Soft Structuralism / anti-clone marketplace.
- * Section comps drove layout: hero → partners → bento → trust → steps → AI → CTA.
+ * Flow: hero → partners → bento → trust → steps → paths → AI → CTA.
  */
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <ProductsBento />
         <TrustProofSection />
         <StepsSection />
+        <GradientPathsSection />
         <AiExpertSection />
         <FinalCtaSection />
       </main>
