@@ -13,7 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 
 type FeatureCard = {
-  gradient: string;
+  surface: string;
   href: string;
   badge?: string;
   badgeIcon?: LucideIcon;
@@ -22,46 +22,47 @@ type FeatureCard = {
   copy: React.ReactNode;
   cta?: string;
   decorIcon?: LucideIcon;
+  light?: boolean;
 };
 
 const featureCards: FeatureCard[] = [
   {
-    gradient: "from-[#1a1a2e] via-[#2d2d5e] to-[#4a3f8c]",
-    href: "#compare",
-    badgePill: "✦ Introducing BazaarBraker.ai ✦",
+    surface: "bg-[var(--bb-ink)]",
+    href: "/term-insurance",
+    badgePill: "Introducing BazaarBraker.ai",
     title: "BazaarBraker.ai",
     copy: (
       <>
         Always find the right policy{" "}
-        <strong className="font-bold">with our AI expert</strong>
+        <strong className="font-semibold">with our AI expert</strong>
       </>
     ),
     cta: "Explore BazaarBraker.ai",
     decorIcon: Bot,
   },
   {
-    gradient: "from-[#2ecc71] via-[#27ae60] to-[#1e9e58]",
-    href: "#compare",
+    surface: "bg-[var(--bb-semantic-up)]",
+    href: "/investment-plans",
     badge: "Investment Plans",
     badgeIcon: PiggyBank,
     title: "Investment Plans",
     copy: (
       <>
         Invest ₹10K and Get{" "}
-        <strong className="text-xl font-bold">₹1 Crore</strong> return*
+        <strong className="text-xl font-semibold">₹1 Crore</strong> return*
       </>
     ),
     decorIcon: PiggyBank,
   },
   {
-    gradient: "from-[#2aabbf] via-[#3a9fd4] to-[#4a8fd4]",
-    href: "#compare",
+    surface: "bg-[var(--bb-primary)]",
+    href: "/health-insurance",
     badge: "Health Insurance",
     badgeIcon: HeartPulse,
     title: "Health Insurance",
     copy: (
       <>
-        Book <strong className="font-bold">Free Health Insurance</strong>{" "}
+        Book <strong className="font-semibold">Free Health Insurance</strong>{" "}
         Consultation at home
       </>
     ),
@@ -69,47 +70,48 @@ const featureCards: FeatureCard[] = [
     decorIcon: HeartPulse,
   },
   {
-    gradient: "from-[#6b5ce7] via-[#8b6fd4] to-[#e8a598]",
-    href: "#compare",
+    surface: "bg-[var(--bb-ink-soft)]",
+    href: "#calculators",
     badge: "SIP Calculator",
     badgeIcon: Calculator,
     title: "SIP Calculator",
     copy: (
       <>
         Make investment simple with our{" "}
-        <strong className="font-bold">SIP calculator</strong>
+        <strong className="font-semibold">SIP calculator</strong>
       </>
     ),
     cta: "Calculate now",
     decorIcon: Calculator,
   },
   {
-    gradient: "from-[#2db8a8] via-[#3aabbf] to-[#4a9fd4]",
-    href: "#compare",
+    surface: "bg-[#0d6e6e]",
+    href: "/home-insurance",
     badge: "Home Insurance",
     badgeIcon: Home,
     title: "Home Insurance",
     copy: (
       <>
-        <strong className="font-bold">₹50 Lakh Cover</strong> for Your Home
-        Insurance starting at Just <strong className="font-bold">₹80/month*</strong>
+        <strong className="font-semibold">₹50 Lakh Cover</strong> for Your Home
+        Insurance starting at Just <strong className="font-semibold">₹80/month*</strong>
       </>
     ),
     decorIcon: Home,
   },
   {
-    gradient: "from-[#e05a6a] via-[#e87878] to-[#f0a090]",
-    href: "#compare",
+    surface: "bg-[var(--bb-surface-tint)] text-[var(--bb-ink)]",
+    href: "#help",
     badge: "Ask Expert",
     badgeIcon: HelpCircle,
     title: "Ask Expert",
     copy: (
       <>
-        Got a <strong className="font-bold">question about insurance?</strong>{" "}
+        Got a <strong className="font-semibold">question about insurance?</strong>{" "}
         Write to us
       </>
     ),
     decorIcon: HelpCircle,
+    light: true,
   },
 ];
 
@@ -121,20 +123,27 @@ function FeatureCardBlock({ card }: { card: FeatureCard }) {
     <Link
       href={card.href}
       className={cn(
-        "relative flex min-h-[200px] flex-col overflow-hidden rounded-2xl bg-gradient-to-br p-5 text-white sm:p-6",
-        card.gradient
+        "group relative flex min-h-[200px] flex-col overflow-hidden rounded-[var(--bb-radius-xl)] p-5 transition-transform duration-200 sm:p-6",
+        "hover:-translate-y-0.5 active:scale-[0.99]",
+        card.light ? "text-[var(--bb-ink)] ring-1 ring-[var(--bb-hairline)]" : "text-white",
+        card.surface
       )}
     >
       <div className="relative z-10 flex flex-1 flex-col">
         {card.badgePill ? (
-          <span className="mb-4 inline-block w-fit rounded-full bg-black/25 px-2.5 py-1 text-[10px] font-medium sm:text-[11px]">
+          <span
+            className={cn(
+              "mb-4 inline-block w-fit rounded-md px-2.5 py-1 text-[10px] font-medium tracking-wide sm:text-[11px]",
+              card.light ? "bg-[var(--bb-hairline-soft)]" : "bg-white/15"
+            )}
+          >
             {card.badgePill}
           </span>
         ) : (
           BadgeIcon &&
           card.badge && (
             <div className="mb-3 flex items-center gap-1.5">
-              <BadgeIcon className="size-3.5 opacity-90" />
+              <BadgeIcon className="size-3.5 opacity-90" strokeWidth={1.75} />
               <span className="text-[11px] font-medium opacity-90 sm:text-xs">
                 {card.badge}
               </span>
@@ -143,7 +152,12 @@ function FeatureCardBlock({ card }: { card: FeatureCard }) {
         )}
 
         {!card.badgePill && (
-          <p className="text-xs font-semibold uppercase tracking-wide opacity-80">
+          <p
+            className={cn(
+              "text-xs font-semibold uppercase tracking-wide",
+              card.light ? "text-[var(--bb-muted)]" : "opacity-80"
+            )}
+          >
             {card.title}
           </p>
         )}
@@ -153,14 +167,24 @@ function FeatureCardBlock({ card }: { card: FeatureCard }) {
         </p>
 
         {card.cta && (
-          <span className="mt-4 inline-flex w-fit rounded-lg bg-white px-4 py-2 text-xs font-semibold text-[#1a3a6b] sm:text-sm">
+          <span
+            className={cn(
+              "mt-4 inline-flex w-fit rounded-lg px-4 py-2 text-xs font-semibold transition-colors sm:text-sm",
+              card.light
+                ? "bg-[var(--bb-ink)] text-white group-hover:bg-[var(--bb-primary)]"
+                : "bg-white text-[var(--bb-ink)]"
+            )}
+          >
             {card.cta}
           </span>
         )}
 
         {DecorIcon && (
           <DecorIcon
-            className="absolute bottom-4 right-4 size-10 opacity-20"
+            className={cn(
+              "absolute bottom-4 right-4 size-10 opacity-15 transition-opacity group-hover:opacity-25",
+              card.light && "text-[var(--bb-primary)]"
+            )}
             strokeWidth={1.5}
           />
         )}
@@ -171,7 +195,7 @@ function FeatureCardBlock({ card }: { card: FeatureCard }) {
 
 export function PromoCardsSection() {
   return (
-    <section className="bg-[#f0f4fa] py-8 md:py-10">
+    <section className="bg-[var(--bb-surface-tint)] py-10 md:py-14">
       <div className="bb-container">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featureCards.map((card) => (

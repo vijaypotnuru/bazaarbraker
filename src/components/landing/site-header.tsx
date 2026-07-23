@@ -26,16 +26,16 @@ function Logo() {
   return (
     <Link href="/" className="shrink-0">
       <div className="flex items-center gap-0.5">
-        <span className="text-xl font-bold tracking-tight">
-          <span className="text-[#00a8e1]">bazaar</span>
-          <span className="text-[#1a3a6b]">braker</span>
+        <span className="text-xl font-semibold tracking-tight">
+          <span className="text-[var(--bb-primary)]">bazaar</span>
+          <span className="text-[var(--bb-ink)]">braker</span>
         </span>
-        <span className="flex size-5 items-center justify-center rounded-full bg-[#00a8e1] text-[8px] font-bold text-white">
+        <span className="flex size-5 items-center justify-center rounded-full bg-[var(--bb-primary)] text-[8px] font-bold text-white">
           .com
         </span>
-        <sup className="ml-0.5 text-[8px] text-[#6a8099]">®</sup>
+        <sup className="ml-0.5 text-[8px] text-[var(--bb-muted)]">®</sup>
       </div>
-      <span className="mt-1 inline-block rounded-full bg-[#1a3a6b] px-2 py-0.5 text-[8px] font-semibold italic tracking-wide text-white">
+      <span className="mt-1 inline-block rounded-md bg-[var(--bb-ink)] px-2 py-0.5 text-[8px] font-semibold tracking-wide text-white">
         HAR FAMILY HOGI INSURED
       </span>
     </Link>

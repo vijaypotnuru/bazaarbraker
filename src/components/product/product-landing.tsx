@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import type { ProductPage } from "@/lib/product-catalog";
 import { SiteFooter } from "@/components/landing/site-footer";
-import { SiteHeader } from "@/components/landing/site-header";
-import { PartnersSection } from "@/components/landing/partners-section";
+import { IslandNav } from "@/components/landing/island-nav";
+import { PartnersStrip } from "@/components/landing/partners-strip";
 
 const categoryIcon: Record<ProductPage["category"], LucideIcon> = {
   term: Umbrella,
@@ -26,13 +26,13 @@ const categoryIcon: Record<ProductPage["category"], LucideIcon> = {
 };
 
 const categoryAccent: Record<ProductPage["category"], string> = {
-  term: "from-[#7c5ce7] to-[#4a7fd4]",
-  health: "from-[#e05a8a] to-[#f5a623]",
-  motor: "from-[#4a7fd4] to-[#2aabbf]",
-  investment: "from-[#e8870a] to-[#f4b000]",
-  travel: "from-[#5b6fd4] to-[#7c5ce7]",
-  home: "from-[#2ecc71] to-[#2aabbf]",
-  other: "from-[#1a3a6b] to-[#4a7fd4]",
+  term: "from-[var(--bb-primary)] to-[var(--bb-ink-soft)]",
+  health: "from-[var(--bb-primary)] to-[#003ecc]",
+  motor: "from-[var(--bb-ink-soft)] to-[var(--bb-primary)]",
+  investment: "from-[#0d6e6e] to-[var(--bb-primary)]",
+  travel: "from-[var(--bb-ink)] to-[var(--bb-primary)]",
+  home: "from-[#0d6e6e] to-[var(--bb-ink-soft)]",
+  other: "from-[var(--bb-ink)] to-[var(--bb-primary)]",
 };
 
 type ProductLandingProps = {
@@ -45,7 +45,7 @@ export function ProductLanding({ page }: ProductLandingProps) {
 
   return (
     <div className="min-h-full bg-[var(--bb-canvas)] text-[var(--bb-ink)]">
-      <SiteHeader />
+      <IslandNav />
       <main>
         <section className="border-b border-[#e8edf5] bg-gradient-to-b from-[#f8faff] to-white">
           <div className="bb-container py-10 md:py-14">
@@ -188,7 +188,7 @@ export function ProductLanding({ page }: ProductLandingProps) {
           </section>
         )}
 
-        <PartnersSection />
+        <PartnersStrip />
       </main>
       <SiteFooter />
     </div>

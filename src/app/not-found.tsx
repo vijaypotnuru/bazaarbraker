@@ -1,27 +1,28 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/landing/site-footer";
-import { SiteHeader } from "@/components/landing/site-header";
+import { IslandNav } from "@/components/landing/island-nav";
 
 export default function NotFound() {
   return (
     <div className="min-h-full bg-[var(--bb-canvas)] text-[var(--bb-ink)]">
-      <SiteHeader />
-      <main className="bb-container flex flex-col items-center py-24 text-center">
-        <p className="text-sm font-semibold tracking-widest text-[#0052ff]">
+      <IslandNav />
+      <main className="bb-container flex min-h-[70dvh] flex-col items-start justify-center py-28 md:py-32">
+        <p className="bb-number text-sm font-medium text-[var(--bb-primary)]">
           404
         </p>
-        <h1 className="mt-3 text-3xl font-bold text-[#1a3a6b]">
+        <h1 className="bb-display mt-3 text-[clamp(2rem,4vw,3rem)] text-[var(--bb-ink)]">
           Page not found
         </h1>
-        <p className="mt-3 max-w-md text-sm text-[#6a8099]">
-          This insurance page is not available yet. Browse products from the
-          homepage or header menu.
+        <p className="mt-4 max-w-[42ch] text-[var(--bb-body)]">
+          This page isn&apos;t available. Head home to compare cover, or open a
+          product from the menu.
         </p>
-        <Link
-          href="/"
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-[#0052ff] px-6 text-sm font-semibold text-white hover:bg-[#003ecc]"
-        >
-          Back to home
+        <Link href="/" className="bb-btn mt-8">
+          Back home
+          <span className="bb-btn__icon" aria-hidden>
+            <ArrowUpRight className="size-4" strokeWidth={2} />
+          </span>
         </Link>
       </main>
       <SiteFooter />

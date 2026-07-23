@@ -86,9 +86,9 @@ function CalcBoxCard({ box }: { box: CalcBox }) {
 
 export function CalculatorsSection() {
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section id="calculators" className="bg-[var(--bb-canvas)] py-12 md:py-16">
       <div className="bb-container">
-        <h2 className="text-2xl font-bold text-[#1a3a6b] md:text-3xl">
+        <h2 className="text-2xl font-semibold tracking-tight text-[var(--bb-ink)] md:text-3xl">
           Popular calculators
         </h2>
 

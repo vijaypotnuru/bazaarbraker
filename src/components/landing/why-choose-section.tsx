@@ -1,40 +1,37 @@
-import { Search } from "lucide-react";
+import { Headphones, IndianRupee, Search, Users } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const features = [
+const features: {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  offset: string;
+}[] = [
   {
-    emoji: "🎉",
-    title: "Over 9 million",
-    titleColor: "text-[#4a5fd4]",
-    borderColor: "border-l-[#4a5fd4]",
+    icon: Users,
+    title: "9.2 million customers",
     description:
-      "customers trust us & have bought their insurance on BazaarBraker",
+      "People across India have compared and bought insurance on BazaarBraker",
     offset: "",
   },
   {
-    emoji: "🔍",
     icon: Search,
     title: "51 insurers",
-    titleColor: "text-[#2aabbf]",
-    borderColor: "border-l-[#2aabbf]",
     description:
-      "partnered with us so that you can compare easily & transparently",
+      "Partnered so you can compare cover, premiums, and claim ratios side by side",
     offset: "md:mt-10",
   },
   {
-    emoji: "🤩",
-    title: "Great Price",
-    titleColor: "text-[#2ecc71]",
-    borderColor: "border-l-[#2ecc71]",
-    description: "for all kinds of insurance plans available online",
+    icon: IndianRupee,
+    title: "Clear pricing",
+    description: "Transparent quotes across term, health, motor, and more",
     offset: "md:-mt-2",
   },
   {
-    emoji: "👩‍💼",
-    title: "Claims",
-    titleColor: "text-[#f5a623]",
-    borderColor: "border-l-[#f5a623]",
+    icon: Headphones,
+    title: "Claims help",
     description:
-      "support built in with every policy for help, when you need it the most",
+      "Support built into every policy when you need it most",
     offset: "md:mt-8",
   },
 ];
@@ -42,64 +39,45 @@ const features = [
 function BackgroundDecorations() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-      <div className="absolute -left-16 top-8 size-48 rounded-full bg-[#fff8e1]/60" />
-      <div className="absolute left-8 top-32 size-32 rounded-full bg-[#e8f0fe]/50" />
-      <div className="absolute right-12 top-16 size-24 rounded-full bg-[#fce4ec]/40" />
-      <div className="absolute bottom-12 left-1/4 grid grid-cols-4 gap-2 opacity-30">
-        {Array.from({ length: 16 }).map((_, i) => (
-          <span key={i} className="size-1 rounded-full bg-[#c5d5ea]" />
-        ))}
-      </div>
-      <span className="absolute right-24 top-1/3 text-lg text-[#ffcdd2]/60">×</span>
-      <span className="absolute right-16 bottom-1/4 text-sm text-[#bbdefb]/70">×</span>
-      <span className="absolute left-1/3 bottom-20 text-xs text-[#c5d5ea]/50">○</span>
+      <div className="absolute -left-20 top-0 size-72 rounded-full bg-[var(--bb-primary-soft)]/40 blur-3xl" />
+      <div className="absolute right-0 bottom-0 size-80 rounded-full bg-[var(--bb-surface-tint)] blur-3xl" />
     </div>
   );
 }
 
 export function WhyChooseSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-24">
+    <section className="relative overflow-hidden bg-[var(--bb-canvas)] py-16 md:py-24">
       <BackgroundDecorations />
 
       <div className="bb-container relative">
         <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
-          {/* Headline */}
           <div>
-            <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-snug tracking-tight">
-              <span className="font-normal text-[#6a8099]">What makes </span>
-              <span className="font-bold text-[#1a3a6b]">
-                BazaarBraker one of India&apos;s favourite places
-              </span>
-              <span className="font-normal text-[#6a8099]">
+            <h2 className="bb-display-lg max-w-[18ch] text-[clamp(1.75rem,3.5vw,2.75rem)] text-[var(--bb-ink)]">
+              <span className="font-normal text-[var(--bb-muted)]">What makes </span>
+              BazaarBraker
+              <span className="font-normal text-[var(--bb-muted)]">
                 {" "}
-                to buy insurance?
+                a trusted place to buy insurance?
               </span>
             </h2>
           </div>
 
-          {/* Staggered feature cards */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             {features.map((feature) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={feature.title}
-                  className={`rounded-xl border border-[#eef2f7] border-l-4 bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] ${feature.borderColor} ${feature.offset}`}
+                  className={`rounded-[var(--bb-radius-lg)] border border-[var(--bb-hairline-soft)] border-l-[3px] border-l-[var(--bb-primary)] bg-[var(--bb-canvas)] p-5 shadow-[var(--bb-shadow-sm)] transition-shadow duration-200 hover:shadow-[var(--bb-shadow-md)] ${feature.offset}`}
                 >
-                  <div className="mb-2 text-xl">
-                    {Icon ? (
-                      <Icon className={`size-5 ${feature.titleColor}`} />
-                    ) : (
-                      feature.emoji
-                    )}
-                  </div>
-                  <h3
-                    className={`mb-1.5 text-lg font-bold ${feature.titleColor}`}
-                  >
+                  <span className="mb-3 flex size-9 items-center justify-center rounded-[10px] bg-[var(--bb-primary-soft)] text-[var(--bb-primary)]">
+                    <Icon className="size-5" strokeWidth={1.75} />
+                  </span>
+                  <h3 className="mb-1.5 text-lg font-semibold tracking-tight text-[var(--bb-ink)]">
                     {feature.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[#6a8099]">
+                  <p className="text-sm leading-relaxed text-[var(--bb-body)]">
                     {feature.description}
                   </p>
                 </div>

@@ -1,34 +1,29 @@
-import { AdvantageSection } from "@/components/landing/advantage-section";
 import { AiExpertSection } from "@/components/landing/ai-expert-section";
-import { AppDownloadSection } from "@/components/landing/app-download-section";
-import { CalculatorsSection } from "@/components/landing/calculators-section";
-import { HelpSection } from "@/components/landing/help-section";
+import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { HeroSection } from "@/components/landing/hero-section";
-import { PartnersSection } from "@/components/landing/partners-section";
-import { PromoCardsSection } from "@/components/landing/promo-cards-section";
-import { SupportBannerSection } from "@/components/landing/support-banner-section";
-import { WhyChooseSection } from "@/components/landing/why-choose-section";
+import { IslandNav } from "@/components/landing/island-nav";
+import { PartnersStrip } from "@/components/landing/partners-strip";
+import { ProductsBento } from "@/components/landing/products-bento";
 import { SiteFooter } from "@/components/landing/site-footer";
-import { SiteHeader } from "@/components/landing/site-header";
+import { StepsSection } from "@/components/landing/steps-section";
+import { TrustProofSection } from "@/components/landing/trust-proof-section";
 
 /**
- * BazaarBraker landing page sections.
+ * BazaarBraker landing — Soft Structuralism / anti-clone marketplace.
+ * Section comps drove layout: hero → partners → bento → trust → steps → AI → CTA.
  */
 export default function Home() {
   return (
     <div className="min-h-full bg-[var(--bb-canvas)] text-[var(--bb-ink)]">
-      <SiteHeader />
+      <IslandNav />
       <main>
         <HeroSection />
-        <PromoCardsSection />
-        <WhyChooseSection />
+        <PartnersStrip />
+        <ProductsBento />
+        <TrustProofSection />
+        <StepsSection />
         <AiExpertSection />
-        <SupportBannerSection />
-        <CalculatorsSection />
-        <AdvantageSection />
-        <AppDownloadSection />
-        <PartnersSection />
-        <HelpSection />
+        <FinalCtaSection />
       </main>
       <SiteFooter />
     </div>
