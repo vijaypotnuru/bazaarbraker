@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/landing/hero-section";
 import { IslandNav } from "@/components/landing/island-nav";
 import { PartnersStrip } from "@/components/landing/partners-strip";
 import { ProductsBento } from "@/components/landing/products-bento";
+import { ResultsSection } from "@/components/landing/results-section";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { StepsSection } from "@/components/landing/steps-section";
 import { TrustProofSection } from "@/components/landing/trust-proof-section";
@@ -15,7 +16,7 @@ import { VoicesSection } from "@/components/landing/voices-section";
 /**
  * BazaarBraker landing — Soft Structuralism / anti-clone marketplace.
  * Flow: hero → partners → bento → trust → steps → paths → compare →
- * advisor → stories → faq → CTA.
+ * advisor → results → stories → faq → CTA.
  */
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <GradientPathsSection />
         <CompareClaritySection />
         <AiExpertSection />
+        <ResultsSection />
         <VoicesSection />
         <FaqSection />
         <FinalCtaSection />

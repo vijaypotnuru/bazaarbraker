@@ -571,5 +571,9 @@ export function getProductPage(slugParts: string[]): ProductPage | undefined {
 }
 
 export function getAllProductSlugs(): string[][] {
-  return productPages.map((page) => page.slug.split("/"));
+  /** Dedicated Soft Structuralism pages own these top-level routes */
+  const dedicated = new Set(["term-insurance", "health-insurance"]);
+  return productPages
+    .filter((page) => !dedicated.has(page.slug))
+    .map((page) => page.slug.split("/"));
 }
