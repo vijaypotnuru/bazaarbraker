@@ -8,6 +8,7 @@ export const brandPhotos = {
   invest: "/brand/invest.png",
   travel: "/brand/travel-banner.png",
   trust: "/brand/trust.png",
+  voices: "/brand/voices.png",
 } as const;
 
 export const brandIcons = {

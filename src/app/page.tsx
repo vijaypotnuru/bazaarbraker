@@ -1,4 +1,6 @@
 import { AiExpertSection } from "@/components/landing/ai-expert-section";
+import { CompareClaritySection } from "@/components/landing/compare-clarity-section";
+import { FaqSection } from "@/components/landing/faq-section";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { GradientPathsSection } from "@/components/landing/gradient-paths-section";
 import { HeroSection } from "@/components/landing/hero-section";
@@ -8,10 +10,12 @@ import { ProductsBento } from "@/components/landing/products-bento";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { StepsSection } from "@/components/landing/steps-section";
 import { TrustProofSection } from "@/components/landing/trust-proof-section";
+import { VoicesSection } from "@/components/landing/voices-section";
 
 /**
  * BazaarBraker landing — Soft Structuralism / anti-clone marketplace.
- * Flow: hero → partners → bento → trust → steps → paths → AI → CTA.
+ * Flow: hero → partners → bento → trust → steps → paths → compare →
+ * advisor → stories → faq → CTA.
  */
 export default function Home() {
   return (
@@ -24,7 +28,10 @@ export default function Home() {
         <TrustProofSection />
         <StepsSection />
         <GradientPathsSection />
+        <CompareClaritySection />
         <AiExpertSection />
+        <VoicesSection />
+        <FaqSection />
         <FinalCtaSection />
       </main>
       <SiteFooter />
