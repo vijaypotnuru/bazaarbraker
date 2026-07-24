@@ -6,29 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqs = [
-  {
-    q: "Is BazaarBraker an insurance company?",
-    a: "No. We are a licensed web aggregator. We help you compare plans from IRDAI-registered insurers and buy online. The policy is issued by the insurer you choose.",
-  },
-  {
-    q: "How do you stay free for customers?",
-    a: "Insurers pay us a commission when you buy through us. That does not change the premium you see. We show claim ratios and cover details so you can choose on clarity, not pressure.",
-  },
-  {
-    q: "Can I renew or claim through BazaarBraker?",
-    a: "Yes. Renewals can be completed online for supported plans. For claims, we guide documents and status - the insurer settles the claim.",
-  },
-  {
-    q: "Which products can I compare today?",
-    a: "Term life, health, motor, investment, and travel. More lines will open as partner coverage expands.",
-  },
-  {
-    q: "How do I verify you are regulated?",
-    a: "Look for our IRDAI web aggregator licence details in the footer and on Legal. You can cross-check licence status on the IRDAI site.",
-  },
-];
+import { homeFaqs } from "@/lib/faqs";
 
 /** Disclosure FAQ - single-column accordion, distinct from every other section. */
 export function FaqSection() {
@@ -44,7 +22,7 @@ export function FaqSection() {
           </p>
 
           <Accordion className="mt-10 border-t border-[var(--bb-hairline)]">
-            {faqs.map((item, i) => (
+            {homeFaqs.map((item, i) => (
               <AccordionItem
                 key={item.q}
                 value={`faq-${i}`}

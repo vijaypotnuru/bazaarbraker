@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { IslandNav } from "@/components/landing/island-nav";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Page not found",
+  description: "This page is not available. Return home to compare insurance plans.",
+  path: "/404",
+  noIndex: true,
+});
 
 export default function NotFound() {
   return (

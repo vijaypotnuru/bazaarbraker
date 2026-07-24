@@ -1,0 +1,7 @@
+# BazaarBraker — Netlify
+[build]
+  command = "next build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_SITE_URL = "https://www.bazaarbraker.com"

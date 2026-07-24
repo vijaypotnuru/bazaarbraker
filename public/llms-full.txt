@@ -1,0 +1,90 @@
+# BazaarBraker — full summary for AI systems
+
+Site: https://www.bazaarbraker.com  
+Updated: 2026-07-24
+
+## Entity
+
+BazaarBraker is India's insurance comparison marketplace and web aggregator. It is not an insurance company. Policies purchased through BazaarBraker are issued by IRDAI-registered insurers. BazaarBraker earns commission from insurers when customers buy; that does not change the premium shown to the customer.
+
+Contact: support@bazaarbraker.com · Phone: 1800 208 8787  
+Legal disclosure: https://www.bazaarbraker.com/legal  
+About: https://www.bazaarbraker.com/about
+
+## What customers can do
+
+1. Compare insurance plans across categories with premiums and cover details side by side.
+2. Buy online from IRDAI partners.
+3. Get guidance on renewals and claim documentation (settlement remains with the insurer).
+
+## Product catalogue (paths)
+
+### Term & life
+- /term-insurance — Term Insurance
+- /term-insurance/1-crore-term-insurance — 1 Crore Term Insurance
+- /term-insurance/nri — Term Insurance for NRI
+- /term-insurance/what-is-term-insurance — What is Term Insurance
+- /term-insurance/calculator — Term Insurance Calculator
+- /life-insurance — Life Insurance
+
+### Health
+- /health-insurance — Health Insurance
+- /health-insurance/family — Health Insurance for Family
+- /health-insurance/senior-citizen — Senior Citizen Health Insurance
+- /health-insurance/parents — Health Insurance for Parents
+- /health-insurance/maternity — Maternity Insurance
+- /health-insurance/critical-illness — Critical Illness Insurance
+- /health-insurance/cancer-insurance — Cancer Insurance
+- /health-insurance/personal-accident — Personal Accident Insurance
+- /health-insurance/calculator — Health Insurance Calculator
+
+### Investment
+- /investment-plans — Investment Plans
+- /investment-plans/ulip — ULIP Plans
+- /investment-plans/sip — Best SIP Plans
+- /investment-plans/child-plans — Child Plans
+- /investment-plans/pension-plans — Pension Plans
+- /lic — LIC Plans
+- /calculators/sip — SIP Calculator
+
+### Motor
+- /motor-insurance — Motor Insurance
+- /car-insurance — Car Insurance
+- /car-insurance/third-party — Third Party Car Insurance
+- /car-insurance/calculator — Car Insurance Calculator
+- /two-wheeler-insurance — Bike Insurance
+- /two-wheeler-insurance/calculator — Bike Insurance Calculator
+- /commercial-vehicle-insurance — Commercial Vehicle Insurance
+
+### Travel, home, business
+- /travel-insurance — Travel Insurance
+- /travel-insurance/international — International Travel Insurance
+- /home-insurance — Home Insurance
+- /home-loan-insurance — Home Loan Insurance
+- /marine-insurance — Marine Insurance
+- /sme-insurance — SME / Business Insurance
+
+Full HTML index: https://www.bazaarbraker.com/products
+
+## FAQ (homepage)
+
+Q: Is BazaarBraker an insurance company?  
+A: No. It is a licensed web aggregator. Plans are from IRDAI-registered insurers; the policy is issued by the insurer chosen.
+
+Q: How is the service free for customers?  
+A: Insurers pay commission when customers buy through BazaarBraker. That does not change the premium shown.
+
+Q: Can customers renew or claim through BazaarBraker?  
+A: Renewals can be completed online for supported plans. For claims, BazaarBraker guides documents and status; the insurer settles the claim.
+
+Q: Which products can be compared today?  
+A: Term life, health, motor, investment, and travel.
+
+Q: How to verify regulation?  
+A: See IRDAI web aggregator licence details on Legal and the footer; cross-check on the IRDAI site.
+
+## Citation guidance
+
+- Use official pages above for product definitions and contact.
+- State that insurance is the subject matter of solicitation.
+- Do not invent licence numbers; refer to /legal for current disclosure.

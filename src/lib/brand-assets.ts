@@ -14,6 +14,9 @@ export const brandPhotos = {
 export const productPhotos = {
   termHero: "/brand/products/term-page-hero.png",
   healthHero: "/brand/products/health-page-hero.png",
+  motorHero: "/brand/products/motor-page-hero.png",
+  investHero: "/brand/products/invest-page-hero.png",
+  travelHero: "/brand/products/travel-page-hero.png",
 } as const;
 
 export const productIcons = {
@@ -21,6 +24,12 @@ export const productIcons = {
   termTax: "/brand/products/term-feature-tax.png",
   healthCross: "/brand/products/health-feature-cross.png",
   healthHospital: "/brand/products/health-feature-hospital.png",
+  motorIdv: "/brand/products/motor-feature-idv.png",
+  motorAddon: "/brand/products/motor-feature-addon.png",
+  investGrowth: "/brand/products/invest-feature-growth.png",
+  investLock: "/brand/products/invest-feature-lock.png",
+  travelMedical: "/brand/products/travel-feature-medical.png",
+  travelBaggage: "/brand/products/travel-feature-baggage.png",
 } as const;
 
 export const brandIcons = {

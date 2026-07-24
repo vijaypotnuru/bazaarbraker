@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { AiExpertSection } from "@/components/landing/ai-expert-section";
 import { CompareClaritySection } from "@/components/landing/compare-clarity-section";
 import { FaqSection } from "@/components/landing/faq-section";
@@ -12,6 +13,16 @@ import { SiteFooter } from "@/components/landing/site-footer";
 import { StepsSection } from "@/components/landing/steps-section";
 import { TrustProofSection } from "@/components/landing/trust-proof-section";
 import { VoicesSection } from "@/components/landing/voices-section";
+import { JsonLd } from "@/components/seo/json-ld";
+import { homeFaqs } from "@/lib/faqs";
+import { buildPageMetadata, faqPageJsonLd } from "@/lib/seo";
+import { SITE_DESCRIPTION } from "@/lib/site";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Compare & Buy Insurance Plans in India",
+  description: SITE_DESCRIPTION,
+  path: "/",
+});
 
 /**
  * BazaarBraker landing — Soft Structuralism / anti-clone marketplace.
@@ -21,6 +32,7 @@ import { VoicesSection } from "@/components/landing/voices-section";
 export default function Home() {
   return (
     <div className="min-h-full bg-[var(--bb-canvas)] text-[var(--bb-ink)]">
+      <JsonLd data={faqPageJsonLd(homeFaqs)} />
       <IslandNav />
       <main>
         <HeroSection />

@@ -6,26 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqs = [
-  {
-    q: "What is a family floater?",
-    a: "A single policy with a shared sum insured for listed family members. It often costs less than separate individual plans, depending on ages and cover.",
-  },
-  {
-    q: "What should I compare besides premium?",
-    a: "Waiting periods, room rent limits, exclusions, hospital network, restore benefits, and claim process - not price alone.",
-  },
-  {
-    q: "Can I cover my parents?",
-    a: "Yes. Look at entry age, pre-existing waiting periods, and senior-friendly benefits. Start with Parents or Senior Citizen paths.",
-  },
-];
+import { healthFaqs } from "@/lib/faqs";
 
 export function HealthFaq() {
   return (
     <Accordion className="mt-6 border-t border-[var(--bb-hairline)]">
-      {faqs.map((item, i) => (
+      {healthFaqs.map((item, i) => (
         <AccordionItem
           key={item.q}
           value={`h-faq-${i}`}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Figtree, Geist_Mono, Outfit } from "next/font/google";
 import { Providers } from "@/components/providers";
+import { JsonLd } from "@/components/seo/json-ld";
+import { organizationJsonLd, rootMetadata, websiteJsonLd } from "@/lib/seo";
 import "./bazaar.css";
 import "./globals.css";
 
@@ -23,11 +25,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "BazaarBraker — Compare & Buy Insurance Plans",
-  description:
-    "Compare health, term life, motor, travel, and investment insurance from 50+ insurers. Clear cover for Indian families.",
-};
+export const metadata: Metadata = rootMetadata();
 
 export default function RootLayout({
   children,
@@ -36,11 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       suppressHydrationWarning
       className={`${outfit.variable} ${figtree.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-[family-name:var(--font-figtree)]">
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <Providers>{children}</Providers>
       </body>
     </html>

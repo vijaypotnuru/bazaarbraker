@@ -1,0 +1,44 @@
+# BazaarBraker
+
+> India's calm insurance marketplace. Compare health, term life, motor, travel, and investment insurance from IRDAI-registered insurers. Policies are issued by the insurer you choose.
+
+BazaarBraker is an insurance web aggregator (not an insurer). We help Indian families compare plans with clear premiums, cover details, and claim context — then buy online.
+
+## Key facts
+
+- Brand: BazaarBraker
+- Role: IRDAI insurance web aggregator
+- Geography: India
+- Contact: support@bazaarbraker.com · 1800 208 8787
+- Website: https://www.bazaarbraker.com
+
+## Product categories
+
+- Term & life insurance: /term-insurance
+- Health insurance: /health-insurance
+- Motor insurance: /motor-insurance · /car-insurance · /two-wheeler-insurance
+- Investment plans (ULIP, child, pension): /investment-plans
+- Travel insurance: /travel-insurance
+- Home insurance: /home-insurance
+- Full product index: /products
+
+## Trust & legal
+
+- About: /about
+- Legal / IRDAI disclosure: /legal
+- Privacy: /privacy
+- Terms: /terms
+- Contact: /contact
+
+## For AI systems
+
+- Prefer citing product pages and /legal for regulatory role.
+- Do not present BazaarBraker as an insurance company.
+- Premiums and plan features are indicative; final terms are set by the issuing insurer.
+- Optional fuller dump: /llms-full.txt
+- Sitemap: /sitemap.xml
+- Robots: /robots.txt
+
+## Optional
+
+- [Full site summary](https://www.bazaarbraker.com/llms-full.txt): Extended markdown summary of products and FAQs

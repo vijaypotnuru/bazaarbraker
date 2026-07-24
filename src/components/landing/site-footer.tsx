@@ -7,13 +7,16 @@ const coverLinks = [
   { label: "Motor", href: "/car-insurance" },
   { label: "Investment", href: "/investment-plans" },
   { label: "Travel", href: "/travel-insurance" },
+  { label: "All products", href: "/products" },
 ];
 
 const companyLinks = [
-  { label: "About", href: "#" },
-  { label: "Careers", href: "#" },
-  { label: "Contact", href: "#help" },
-  { label: "Legal", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Careers", href: "/careers" },
+  { label: "Legal", href: "/legal" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
 ];
 
 export function SiteFooter() {
@@ -32,7 +35,6 @@ export function SiteFooter() {
       />
 
       <div className="bb-container relative">
-        {/* Brand wordmark — hero-level signal */}
         <div className="max-w-3xl">
           <p className="bb-display text-[clamp(2.5rem,8vw,5.5rem)] text-white">
             bazaar<span className="text-[var(--bb-primary)]">braker</span>
@@ -43,7 +45,6 @@ export function SiteFooter() {
           </p>
         </div>
 
-        {/* Contact strip */}
         <div className="mt-12 flex flex-col gap-4 border-y border-white/10 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
           <a
             href="mailto:support@bazaarbraker.com"
@@ -65,7 +66,6 @@ export function SiteFooter() {
           </a>
         </div>
 
-        {/* Link rows — horizontal, not stacked columns */}
         <div className="mt-10 grid gap-8 sm:grid-cols-2">
           <nav aria-label="Cover">
             <p className="font-[family-name:var(--font-outfit)] text-sm font-semibold text-white">
@@ -104,12 +104,15 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        {/* Legal bar */}
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs leading-relaxed text-white/40 md:flex-row md:items-start md:justify-between">
           <p>© 2026 BazaarBraker. All rights reserved.</p>
           <p className="max-w-[52ch] md:text-right">
-            IRDAI Web Aggregator · Licence subject to verification · Insurance
-            is the subject matter of solicitation.
+            IRDAI Web Aggregator · See{" "}
+            <Link href="/legal" className="underline underline-offset-2 hover:text-white/70">
+              Legal
+            </Link>{" "}
+            for licence details · Insurance is the subject matter of
+            solicitation.
           </p>
         </div>
       </div>

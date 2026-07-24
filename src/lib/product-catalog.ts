@@ -572,7 +572,13 @@ export function getProductPage(slugParts: string[]): ProductPage | undefined {
 
 export function getAllProductSlugs(): string[][] {
   /** Dedicated Soft Structuralism pages own these top-level routes */
-  const dedicated = new Set(["term-insurance", "health-insurance"]);
+  const dedicated = new Set([
+    "term-insurance",
+    "health-insurance",
+    "motor-insurance",
+    "investment-plans",
+    "travel-insurance",
+  ]);
   return productPages
     .filter((page) => !dedicated.has(page.slug))
     .map((page) => page.slug.split("/"));
